@@ -51,11 +51,12 @@ export default class PgsqlAuthentication implements IAuthentication {
     }
 
     const firstResult = results.rows[0]
+
     return new User(
-        new Identity(firstResult.id),
-        firstResult.name,
-        new Email(firstResult.email),
-        firstResult.password
+      new Identity(firstResult.id),
+      firstResult.name,
+      new Email(firstResult.email),
+      firstResult.password
     )
   }
 
