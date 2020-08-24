@@ -1,5 +1,4 @@
 import ILogin from '@auth_application/Responses/ILogin'
-import User from '@auth_domain/Models/User'
 import { Response } from 'express'
 
 export default class ApiLogin implements ILogin {
