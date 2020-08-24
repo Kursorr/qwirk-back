@@ -1,0 +1,40 @@
+{
+  "name": "typescript-architecture",
+  "version": "1.0.0",
+  "description": "Typescript with hexagonal architecture and ddd principe",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon",
+    "start": "npm run build && node dist/index.js",
+    "build": "rimraf ./dist && tsc"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.7",
+    "@types/node": "^14.6.0",
+    "@types/pg": "^7.14.4",
+    "@types/uuid": "^8.3.0",
+    "nodemon": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
+    "nodejs-password": "^1.0.2",
+    "pg": "^8.3.2",
+    "uuid": "^8.3.0"
+  },
+  "_moduleAliases": {
+    "@core": "dist/Core",
+    "@auth_application": "dist/Auth/Application",
+    "@auth_domain": "dist/Auth/Domain",
+    "@auth_infrastructure": "dist/Auth/Infrastructure"
+  }
+}
