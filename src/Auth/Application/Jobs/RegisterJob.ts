@@ -7,7 +7,6 @@ import IPassword from '@auth_domain/Services/IPassword'
 import IRegister from '@auth_application/Responses/IRegister'
 
 export default class RegisterJob {
-
   private readonly registerRequest: RegisterRequest
   private readonly authenticationRepository: IAuthentication
   private readonly passwordService: IPassword
@@ -43,4 +42,5 @@ export default class RegisterJob {
       registerResponse.send(null, e)
     }
   }
+
 }
