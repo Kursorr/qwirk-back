@@ -25,7 +25,7 @@ export default class RegisterJob {
   public async handle(registerResponse: IRegister) {
     const email: Email = new Email(this.registerRequest.email ?? '')
     if (await this.authenticationRepository.findByEmail(email) !== null) {
-      return registerResponse.send(null, new Error("User already exist"))
+      return registerResponse.send(null, new Error('User already exist'))
     }
 
     const userInsert: User = new User(
