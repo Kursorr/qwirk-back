@@ -12,14 +12,14 @@ class RegisterAction {
     registerRequest.email = data.email
     registerRequest.password = data.password
 
-    const registerCommand: RegisterJob = new RegisterJob(
+    /*const registerCommand: RegisterJob = new RegisterJob(
       registerRequest,
-      dic.get('repository.authentication'),
+      dic.get('repository.write.authentication'),
       dic.get('service.password')
     )
 
     const registerResponse: IRegister = new WebsocketRegister(socket)
-    await registerCommand.handle(registerResponse)
+    await registerCommand.handle(registerResponse)*/
   }
 }
 
