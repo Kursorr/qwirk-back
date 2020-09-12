@@ -14,7 +14,7 @@ class LoginAction {
 
     const loginCommand: LoginJob = new LoginJob(
       loginRequest,
-      dic.get('repository.authentication'),
+      dic.get('repository.read.authentication'),
       dic.get('service.password'),
       new JwtService()
     )
