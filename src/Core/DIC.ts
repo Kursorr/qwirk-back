@@ -1,6 +1,7 @@
 import NodePasswordService from '@auth_infrastructure/Services/NodePasswordService'
 import Connection from '@core/Connection'
-import PgsqlAuthentication from '@auth_infrastructure/Repositories/PgsqlAuthentication'
+import PgsqlReadAuthentication from '@auth_infrastructure/Repositories/Read/Read'
+import PgsqlRequestAuthentication from "@auth_infrastructure/Repositories/Write/Request"
 
 export type dicCallback = ((dic: DIC) => any)
 
@@ -45,8 +46,12 @@ instance.bind('connection', (dic: DIC) => {
   return new Connection()
 })
 
-instance.bind('repository.authentication', (dic: DIC) => {
-  return new PgsqlAuthentication(dic.get('connection'))
+instance.bind('repository.read.authentication', (dic: DIC) => {
+  return new PgsqlReadAuthentication(dic.get('connection'))
+})
+
+instance.bind('repository.write.authentication', (dic: DIC) => {
+  return new PgsqlRequestAuthentication(dic.get('connection'))
 })
 
 export default instance
