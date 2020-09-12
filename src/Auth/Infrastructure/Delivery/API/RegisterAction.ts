@@ -14,7 +14,8 @@ class RegisterAction {
 
     const registerCommand: RegisterJob = new RegisterJob(
         registerRequest,
-        dic.get('repository.authentication'),
+        dic.get('repository.write.authentication'),
+        dic.get('repository.read.authentication'),
         dic.get('service.password')
     )
 
