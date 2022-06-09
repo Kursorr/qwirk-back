@@ -38,7 +38,7 @@ export default class RegisterJob {
     try {
       const user = await this.authenticationRepository.insert(userInsert)
       registerResponse.send(user, null)
-    } catch (e) {
+    } catch (e: any) {
       registerResponse.send(null, e)
     }
   }

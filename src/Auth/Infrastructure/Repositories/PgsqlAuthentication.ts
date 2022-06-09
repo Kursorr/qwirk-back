@@ -15,7 +15,7 @@ export default class PgsqlAuthentication implements IAuthentication {
   public async findByEmail(email: Email): Promise<User | null> {
     let results = null
     try {
-      const statement = `select id, name, email, password from "user" where email = $1`
+      const statement = `SELECT id, name, email, password FROM "user" WHERE email = $1`
       results = await this.connection.query(statement, [email.value])
     } catch (e) {
       return null
@@ -37,8 +37,8 @@ export default class PgsqlAuthentication implements IAuthentication {
   public async insert(user: User): Promise<User | null> {
     let results = null
     try {
-      const statement = `insert into "user" (id, name, email, password)
-        values ($1, $2, $3, $4)
+      const statement = `INSERT INTO "user" (id, name, email, password)
+        VALUES ($1, $2, $3, $4)
         returning id, name, email, password, created_at`
       results = await this.connection.query(statement, [
           user.identity.Id,

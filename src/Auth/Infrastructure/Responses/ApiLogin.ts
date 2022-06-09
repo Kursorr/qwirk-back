@@ -8,7 +8,7 @@ export default class ApiLogin implements ILogin {
     this.response = responseExpress
   }
 
-  send(obj: object | null, err: Error | null): void {
+  send(obj: object | null, err: Error | null): any {
     if (err) {
       return this.response.json({
         message: err.message

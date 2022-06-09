@@ -9,7 +9,7 @@ export default class ApiRegister implements IRegister {
     this.response = responseExpress
   }
 
-  public send(user: User | null, err: Error | null): void {
+  public send(user: User | null, err: Error | null): any {
     if (err) {
       return this.response.json({
         message: err.message
